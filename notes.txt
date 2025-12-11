@@ -1,0 +1,12 @@
+useState - state(variable), state undating function
+
+const [name,setName]=useState({data:"rge"})
+
+setName("sree");
+
+useReducer - state , dispatch
+
+const [nameObj, nameDispatch]=useReducer(reducerFunc,0);
+
+
+delete, new add, already data update
