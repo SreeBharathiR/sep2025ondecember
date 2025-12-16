@@ -2,6 +2,7 @@ import { useReducer, useState } from "react";
 
 import "./App.css";
 import Sample from "./components/Sample";
+import Example from "./components/Example";
 
 const studentDetails = [
   {
@@ -145,7 +146,8 @@ function App() {
   // };
   return (
     <>
-      <Sample></Sample>
+      {/* <Sample></Sample> */}
+      <Example></Example>
       <ol>
         {" "}
         {/* <label name={"student"}></label> */}
