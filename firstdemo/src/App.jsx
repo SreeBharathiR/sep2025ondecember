@@ -8,6 +8,8 @@ import Education from "./pages/Education";
 import Projects from "./pages/Projects";
 import Error from "./pages/Error";
 import ProjectItem from "./pages/ProjectItem";
+import Login from "./pages/Login";
+import Layout from "./components/Layout";
 
 // const studentDetails = [
 //   {
@@ -153,14 +155,17 @@ function App() {
     <>
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<Home />}></Route>
-          <Route path="/about" element={<About />}></Route>
-          <Route path="/education" element={<Education />}></Route>
-          <Route path="/projects" element={<Projects />}></Route>
-          <Route
-            path="/projects/:projectname"
-            element={<ProjectItem />}
-          ></Route>
+          <Route path="/" element={<Layout />}>
+            <Route index element={<Home />}></Route>
+            <Route path="/login" element={<Login />}></Route>
+            <Route path="/about" element={<About />}></Route>
+            <Route path="/education" element={<Education />}></Route>
+            <Route path="/projects" element={<Projects />}></Route>
+            <Route
+              path="/projects/:projectname"
+              element={<ProjectItem />}
+            ></Route>
+          </Route>
           <Route path="*" element={<Error />}></Route>
         </Routes>
       </BrowserRouter>
