@@ -1,9 +1,11 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { Navigate, useNavigate } from "react-router-dom";
+import AuthContext from "../context/AuthContext";
 
 const Login = () => {
   const [data, setData] = useState({ name: "", pass: "" });
-  //   const navigate = useNavigate();
+  const { handleLogin: hanldeLoginAuth } = useContext(AuthContext);
+  const navigate = useNavigate();
   const handleLogin = () => {
     if (data.name.trim() === "" || data.pass.trim() === "") {
       console.log("Crediatials needed!!");
@@ -14,7 +16,8 @@ const Login = () => {
       return;
     }
     // navigate("/");
-    return <Navigate to="/"></Navigate>;
+    hanldeLoginAuth();
+    return navigate("/");
   };
   return (
     <div>

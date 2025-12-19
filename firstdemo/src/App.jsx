@@ -10,6 +10,8 @@ import Error from "./pages/Error";
 import ProjectItem from "./pages/ProjectItem";
 import Login from "./pages/Login";
 import Layout from "./components/Layout";
+import { AuthProvider } from "./context/AuthContext";
+import Protective from "./components/Protective";
 
 // const studentDetails = [
 //   {
@@ -153,22 +155,56 @@ function App() {
   // };
   return (
     <>
-      <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<Layout />}>
-            <Route index element={<Home />}></Route>
-            <Route path="/login" element={<Login />}></Route>
-            <Route path="/about" element={<About />}></Route>
-            <Route path="/education" element={<Education />}></Route>
-            <Route path="/projects" element={<Projects />}></Route>
-            <Route
-              path="/projects/:projectname"
-              element={<ProjectItem />}
-            ></Route>
-          </Route>
-          <Route path="*" element={<Error />}></Route>
-        </Routes>
-      </BrowserRouter>
+      <AuthProvider>
+        <BrowserRouter>
+          <Routes>
+            <Route path="/" element={<Layout />}>
+              <Route
+                index
+                element={
+                  <Protective>
+                    <Home />
+                  </Protective>
+                }
+              ></Route>
+              <Route path="/login" element={<Login />}></Route>
+              <Route
+                path="/about"
+                element={
+                  <Protective>
+                    <About />
+                  </Protective>
+                }
+              ></Route>
+              <Route
+                path="/education"
+                element={
+                  <Protective>
+                    <Education />
+                  </Protective>
+                }
+              ></Route>
+              <Route
+                path="/projects"
+                element={
+                  <Protective>
+                    <Projects />
+                  </Protective>
+                }
+              ></Route>
+              <Route
+                path="/projects/:projectname"
+                element={
+                  <Protective>
+                    <ProjectItem />
+                  </Protective>
+                }
+              ></Route>
+            </Route>
+            <Route path="*" element={<Error />}></Route>
+          </Routes>
+        </BrowserRouter>
+      </AuthProvider>
     </>
   );
 }
