@@ -10,3 +10,51 @@ const [nameObj, nameDispatch]=useReducer(reducerFunc,0);
 
 
 delete, new add, already data update
+
+
+DataBase
+
+SQL / NOSQL
+
+MongoDB - NOSQL
+
+SQL - DB - tables (users, tasks) - rows -cols
+
+MongoDB - Collections(users, tasks) - document
+{
+    "name":"sree",
+    "id":1
+}
+
+
+BSON - Binary format - fast compared to JSON
+
+
+data -> bSON(Binary format)->internal op->data(readable format)
+
+collection - users
+
+{
+    "_id":"9876543wghjkhh",
+    "email":"saran@gmail.com",
+    "password":"iuytrr",
+    "name":"saran:
+}, -> document
+{
+"_id":0987t,
+    "password":"iuytrr@swetha",
+    "name":"swetha"}
+
+Installation:
+
+1. MongoDB server - data's are store in this
+2. MongoDB shell -  commands or query
+3. MongoDB compass - GUI (to avoid shell)
+4. MongoDB atlas - cloud services
+
+
+Backend - nodejs, epressjs
+
+Expressjs - library/package - npm i package_names
+
+server,app,index, main - common

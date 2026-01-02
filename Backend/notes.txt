@@ -1,0 +1,18 @@
+CRUD operations:
+c - create - post http method
+r - read - get method
+u - update - patch, put
+d - delete - delete
+
+saran's details + create(POST Method) req -> server -> create saran as new user in users collection -> res ( created successfully)
+
+patch - single field
+saran's new password + patch(req) -> server -> new password update to the saran's details that is stored in users collection
+
+put - need to pass all the fields
+
+HTTP status codes
+ 200 - ok,201 - created,204 - no content
+ 304
+ 400,404, 403
+ 500
