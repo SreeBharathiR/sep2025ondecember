@@ -16,3 +16,19 @@ HTTP status codes
  304
  400,404, 403
  500
+
+
+ server connect - done
+ DB connect - done
+
+ MVC 
+
+ M - Model - structure of the collection
+ V - View - User Interface
+ [
+    client side rendering - CSR
+    server side rendering - SSR
+ ]
+ C - Controller - all the logics - handler function - (req,res)=>{}
+
+ Routes - path 
